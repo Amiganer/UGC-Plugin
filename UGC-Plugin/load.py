@@ -87,7 +87,7 @@ def plugin_start(plugin_dir):
     return ("UGC-Plugin")
 
 def fetch_gl_cmd():
-    r_cmd = requests.get(ugc.G_CMD, verify=False)
+    r_cmd = requests.get(ugc.G_CMD)
     if(r_cmd.status_code > 202):
         updateMainUi(tick_color="red", systems_color="red")
     ugc.cmd = r_cmd.content.decode()
